@@ -78,3 +78,142 @@ button,input,textarea,select{font:inherit}
 @media(max-width:1000px){.nav-links{gap:15px}.services-grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.topbar-inner{font-size:10px}.nav{min-height:70px}.menu-toggle{display:block}.nav-links{position:absolute;top:70px;left:20px;right:20px;background:#fff;border-radius:18px;padding:15px;box-shadow:0 20px 50px rgba(7,20,38,.15);display:none;flex-direction:column;align-items:stretch;gap:4px}.nav-links.open{display:flex}.nav-links a{padding:12px}.nav-cta{text-align:center}.hero{min-height:760px}.hero-content{grid-template-columns:1fr;padding:70px 0}.hero-visual{min-height:300px;transform:scale(.8)}.hero h1{letter-spacing:-2px}.about-grid,.areas-grid,.contact-grid{grid-template-columns:1fr;gap:55px}.large-placeholder{height:370px}.stats-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.contact-grid{gap:40px}.split-heading{align-items:start;gap:25px}}
 @media(max-width:560px){.container{width:min(100% - 28px,1160px)}.topbar-inner span{display:none}.topbar-inner{justify-content:center}.hero{min-height:800px}.hero-actions{flex-direction:column}.hero-actions .btn{width:100%}.hero-trust{gap:13px;justify-content:space-between}.hero-trust div{padding-left:9px}.hero-trust strong{font-size:15px}.hero-trust span{font-size:8px}.service-orb{transform:scale(.72)}.stats-grid,.services-grid,.why-grid,.reviews-grid,.gallery-grid,.form-row,.footer-grid{grid-template-columns:1fr}.section{padding:78px 0}.cta-inner{flex-direction:column;align-items:flex-start}.cta-inner h2{font-size:25px}.split-heading{display:block}.rating{margin-top:20px}.gallery-item{height:220px}.footer-bottom{flex-direction:column;gap:8px}.floating-whatsapp{right:14px;bottom:14px}.back-top{right:14px;bottom:72px}}
+/* =========================
+   OUR WORK
+========================= */
+
+.our-work {
+    padding: 100px 7%;
+    background: #f7f9fc;
+}
+
+.section-header {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 50px;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #0b8fdb;
+    margin-bottom: 12px;
+}
+
+.section-header h2 {
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    margin: 0 0 15px;
+    color: #101820;
+}
+
+.section-header p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Gallery */
+.work-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1300px;
+    margin: auto;
+}
+
+.work-card {
+    position: relative;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #ddd;
+    cursor: pointer;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+.work-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.work-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to top,
+        rgba(0, 0, 0, 0.8),
+        rgba(0, 0, 0, 0.05)
+    );
+    opacity: 0.8;
+    transition: 0.4s ease;
+}
+
+.work-card:hover img {
+    transform: scale(1.1);
+}
+
+.work-card:hover::after {
+    background: linear-gradient(
+        to top,
+        rgba(0, 130, 200, 0.85),
+        rgba(0, 0, 0, 0.1)
+    );
+}
+
+.work-overlay {
+    position: absolute;
+    z-index: 2;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    color: white;
+    transform: translateY(10px);
+    transition: 0.4s ease;
+}
+
+.work-card:hover .work-overlay {
+    transform: translateY(0);
+}
+
+.work-overlay span {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    opacity: 0.9;
+}
+
+.work-overlay h3 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .work-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .our-work {
+        padding: 70px 5%;
+    }
+
+    .work-gallery {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .work-card {
+        height: 280px;
+    }
+}
